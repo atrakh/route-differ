@@ -20,6 +20,7 @@
     "@blueprintjs/core": "^1.32.0",
     "file-loader": "^1.1.5",
     "firebase": "^4.6.0",
+    "js-cookie": "^2.2.0",
     "query-string": "^5.0.1",
     "react": "^16.0.0",
     "react-addons-css-transition-group": "^15.6.2",
