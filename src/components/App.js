@@ -2,35 +2,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './app.css'
 
-import { Button } from '@blueprintjs/core'
-import queryString from 'query-string'
+import { Button, NonIdealState } from '@blueprintjs/core'
 import RouteList from './RouteList'
+import Navbar from '../containers/NavbarContainer'
 
-const App = ({ onLoginClick, onLogoutClick, stravaToken }) => (
+const App = ({ stravaToken }) => (
   <div>
-    <nav className="pt-navbar .modifier">
-      <div className="pt-navbar-group pt-align-left">
-        <div className="pt-navbar-heading">Route Differ</div>
-      </div>
-      <div className="pt-navbar-group pt-align-right">
-        {!stravaToken ? (
-          <Button
-            iconName="log-in"
-            text="Authorize via Strava"
-            onClick={onLoginClick}
-          />
-        ) : (
-          <Button iconName="log-out" text="Log out" onClick={onLogoutClick} />
-        )}
-      </div>
-    </nav>
-    <RouteList />
+    <Navbar />
+    {stravaToken ? (
+      <RouteList />
+    ) : (
+      <NonIdealState
+        title="Not logged in"
+        description="Authorize with Strava to diff 'em routes"
+        visual="disable"
+      />
+    )}
   </div>
 )
 
 App.propTypes = {
-  onLoginClick: PropTypes.func.isRequired,
-  onLogoutClick: PropTypes.func.isRequired,
   stravaToken: PropTypes.string
 }
 
