@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open --progress --hot"
   },
   "license": "MIT",
   "devDependencies": {
@@ -19,6 +19,7 @@
   "dependencies": {
     "@blueprintjs/core": "^1.32.0",
     "file-loader": "^1.1.5",
+    "firebase": "^4.6.0",
     "query-string": "^5.0.1",
     "react": "^16.0.0",
     "react-addons-css-transition-group": "^15.6.2",

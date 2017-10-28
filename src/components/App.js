@@ -7,7 +7,7 @@ import RouteList from './RouteList';
 
 var handleClick = () => {
   window.location =
-    'https://www.strava.com/oauth/authorize?client_id=20973&response_type=code&redirect_uri=http://localhost:8080&scope=view_private&approval_prompt=force';
+    'https://www.strava.com/oauth/authorize?client_id=20973&response_type=code&redirect_uri=https://us-central1-route-differ.cloudfunctions.net/exchangeStravaToken&scope=view_private&approval_prompt=force';
 };
 
 class AppComponent extends React.Component {
