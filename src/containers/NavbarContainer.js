@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import Navbar from '../components/Navbar'
 import { getStravaToken, login, logout } from '../utils/auth'
 
-
 function mapStateToProps(state) {
   return {
     stravaToken: getStravaToken(),

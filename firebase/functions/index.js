@@ -19,7 +19,7 @@ exports.exchangeStravaToken = functions.https.onRequest((request, response) => {
 
     body = JSON.parse(body)
     response.writeHead(301, {
-      Location: config.redirect_url + '?token=' + body.access_token
+      Location: config.redirect_url + '?token=' + body.access_token + '&id=' + body.athlete.id
     })
     response.end()
   })
