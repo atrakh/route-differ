@@ -1,0 +1,11 @@
+dependencies:
+  override:
+    - npm install
+test:
+  override:
+    - npm run test
+machine:
+  node:
+    version: 6.11.4
+  npm:
+    version: 3.5.2
