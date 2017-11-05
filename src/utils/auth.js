@@ -10,7 +10,7 @@ export const getStravaToken = () => {
     Cookies.set('token', queryParams.id + ' ' + queryParams.token)
     return Cookies.get('token')
   }
-  return 'error'
+  return null
 }
 
 export const login = () => {
