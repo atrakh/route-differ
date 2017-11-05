@@ -1,47 +1,70 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   color: #fff;
-  background: 'snow-white';
+  background: #f5f8fa;
 }
 
-.index {
-  width: 40%;
-  margin: 50px auto;
-  padding: 10px;
-  background: #333;
-  border: 1px solid #000;
-  border-radius: 2px;
-  text-align: center;
-  box-sizing: border-box;
+nav.pt-navbar {
+  background: #f1f4f7;
 }
 
-.index code {
-  padding: 3px 6px;
-  color: #000;
-  background: #fff;
-  font-size: 14px;
-}
-
-.index img {
-  margin: 40px auto;
-  border-radius: 4px;
-  background: #fff;
-  display: block;
-}
-
-.notice {
-  margin: 20px auto;
-  padding: 15px 0;
-  text-align: center;
-  border: 1px solid #000;
-  border-width: 1px 0;
-  background: #666;
+ul.pt-menu {
+  background: inherit;
+  overflow: auto;
 }
 
 .pt-menu {
-  height: 600px;
-  overflow: auto;
+  height: 100%;
+  max-width: 300px;
+}
+
+.pt-menu-header {
+  text-align: center;
+}
+
+ul.pt-menu.route-list {
+  transition: all 1s;
+}
+
+ul.pt-menu.route-list.hide {
+  height: 0;
+  overflow: hidden;
+}
+
+ul.pt-menu.activity-list {
+  height: 0;
+  transition: all 1s;
+}
+
+ul.pt-menu.activity-list.show {
+  height: 100%;
+}
+
+.pt-large {
+  height: 100px;
+  width: 100px;
+}
+
+button.pt-button.pt-intent-warning.pt-large.pt-icon-log-in::before {
+  font-size: 40px;
+}
+
+div.map {
+  min-width: 300px;
+  min-height: 200px;
+  width: 100%;
+  height: 0;
+  margin: 0 auto;
+  padding-top: 50%;
+  position: relative;
+}
+
+div.map.container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }

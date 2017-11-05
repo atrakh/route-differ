@@ -6,19 +6,23 @@ import RouteList from './RouteList'
 
 const Navbar = ({ onLoginClick, onLogoutClick, stravaToken }) => (
   <div>
-    <nav className="pt-navbar .modifier">
+    <nav className="pt-navbar">
       <div className="pt-navbar-group pt-align-left">
         <div className="pt-navbar-heading">Route Differ</div>
       </div>
       <div className="pt-navbar-group pt-align-right">
         {!stravaToken ? (
           <Button
-            iconName="log-in"
             text="Authorize via Strava"
+            className="pt-intent-warning pt-minimal pt-icon-log-in"
             onClick={onLoginClick}
           />
         ) : (
-          <Button iconName="log-out" text="Log out" onClick={onLogoutClick} />
+          <Button
+            text="Logout"
+            className="pt-intent-warning pt-minimal pt-icon-log-out"
+            onClick={onLogoutClick}
+          />
         )}
       </div>
     </nav>

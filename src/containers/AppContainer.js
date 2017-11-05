@@ -3,11 +3,12 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import App from '../components/App'
-import { getStravaToken } from '../utils/auth'
+import { getStravaToken, login } from '../utils/auth'
 
 function mapStateToProps(state) {
   return {
-    stravaToken: getStravaToken()
+    stravaToken: getStravaToken(),
+    onLoginClick: login
   }
 }
 
