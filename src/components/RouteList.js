@@ -9,18 +9,6 @@ import {
   MenuDivider
 } from '@blueprintjs/core'
 
-const onClick = e => {
-  let classes = e.target.classList
-  document
-    .getElementsByClassName('route-list')
-    .item(0)
-    .classList.add('hide')
-  document
-    .getElementsByClassName('activity-list')
-    .item(0)
-    .classList.add('show')
-}
-
 class RouteList extends React.Component {
   componentWillMount() {
     const { stravaToken } = this.props
@@ -28,7 +16,7 @@ class RouteList extends React.Component {
   }
 
   render() {
-    const { isFetching, routes, error } = this.props
+    const { onRouteClick, isFetching, routes, error } = this.props
     if (isFetching) {
       return <NonIdealState visual={<Spinner />} title={'Loading'} />
     }
@@ -38,11 +26,15 @@ class RouteList extends React.Component {
     }
     return (
       <Menu className="route-list">
-        <MenuDivider title={'Routes'} />
+        <MenuDivider title={'Select a route'} />
         {Array.isArray(routes) &&
           routes.map(route => {
             return (
-              <MenuItem key={route.id} text={route.name} onClick={onClick} />
+              <MenuItem
+                key={route.id}
+                text={route.name}
+                onClick={onRouteClick}
+              />
             )
           })}
       </Menu>
@@ -52,6 +44,7 @@ class RouteList extends React.Component {
 
 RouteList.propTypes = {
   stravaToken: PropTypes.string,
+  onRouteclick: PropTypes.func.isRequired,
   routes: PropTypes.array,
   isFetching: PropTypes.bool
 }

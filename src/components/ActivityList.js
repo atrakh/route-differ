@@ -9,6 +9,7 @@ import {
   MenuItem,
   MenuDivider
 } from '@blueprintjs/core'
+
 class ActivityList extends React.Component {
   componentWillMount() {
     const { stravaToken } = this.props
@@ -30,7 +31,7 @@ class ActivityList extends React.Component {
 
     return (
       <Menu className="activity-list">
-        <MenuDivider title={'Activities'} />
+        <MenuDivider title={'Select an activity'} />
         {Array.isArray(activities) &&
           activities.map(activity => {
             return (

@@ -28,16 +28,21 @@ ul.pt-menu.route-list {
 
 ul.pt-menu.route-list.hide {
   height: 0;
+  opacity: 0;
   overflow: hidden;
 }
 
 ul.pt-menu.activity-list {
   height: 0;
+  opacity: 0;
   transition: all 1s;
+  overflow: hidden;
 }
 
 ul.pt-menu.activity-list.show {
   height: 100%;
+  opacity: 1;
+  overflow: auto;
 }
 
 .pt-large {
@@ -47,6 +52,16 @@ ul.pt-menu.activity-list.show {
 
 button.pt-button.pt-intent-warning.pt-large.pt-icon-log-in::before {
   font-size: 40px;
+}
+
+button.pt-button.pt-minimal.pt-intent-warning.pt-icon-repeat {
+  width: 100%;
+  display: none;
+}
+
+button.pt-button.pt-minimal.pt-intent-warning.pt-icon-repeat.show {
+  height: 30px;
+  display: block;
 }
 
 div.map {
