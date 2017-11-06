@@ -1,31 +1,17 @@
 import React from 'react'
-import { compose, withProps } from 'recompose'
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker
-} from 'react-google-maps'
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react'
+import PropTypes from 'prop-types'
 
-const MyMapComponent = compose(
-  withProps({
-    googleMapURL:
-      'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places',
-    loadingElement: <div />,
-    containerElement: <div className="map" />,
-    mapElement: <div className="map container" />
-  }),
-  withScriptjs,
-  withGoogleMap
-)(props => (
-  <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
-    {props.isMarkerShown && (
-      <Marker
-        position={{ lat: -34.397, lng: 150.644 }}
-        onClick={props.onMarkerClick}
-      />
-    )}
-  </GoogleMap>
-))
+export class GoogleMap extends React.Component {
+  render() {
+    return <div className="map"> <Map google={this.props.google} zoom={14} center={{lat: 37.782551, lng: -122.445368}} className="map container" /></div>
+  }
+}
 
-export default MyMapComponent
+GoogleMap.propTypes = {
+
+}
+
+export default GoogleApiWrapper({
+  apiKey: null
+})(GoogleMap)

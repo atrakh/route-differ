@@ -10,7 +10,6 @@ import Navbar from '../containers/NavbarContainer'
 import Map from './Map'
 
 const App = ({ stravaToken, onLoginClick, onRestartClick }) => {
-  console.log(stravaToken)
   return (
     <div>
       <Navbar />
