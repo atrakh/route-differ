@@ -17,7 +17,7 @@ class ActivityList extends React.Component {
   }
 
   render() {
-    const { isFetching, activities, error } = this.props
+    const { onActivityClick, isFetching, activities, error } = this.props
 
     if (isFetching) {
       return <NonIdealState visual={<Spinner />} title={'Loading'} />
@@ -39,6 +39,7 @@ class ActivityList extends React.Component {
                 key={activity.id}
                 text={activity.name}
                 label={moment(activity.start_date_local).format('MMM D YYYY')}
+                onClick={onActivityClick}
               />
             )
           })}
@@ -50,6 +51,7 @@ class ActivityList extends React.Component {
 ActivityList.propTypes = {
   stravaToken: PropTypes.string,
   activities: PropTypes.array,
-  isFetching: PropTypes.bool
+  isFetching: PropTypes.bool,
+  onActivityClick: PropTypes.func.isRequired
 }
 export default ActivityList

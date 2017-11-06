@@ -44,7 +44,7 @@ class RouteList extends React.Component {
 
 RouteList.propTypes = {
   stravaToken: PropTypes.string,
-  onRouteclick: PropTypes.func.isRequired,
+  onRouteClick: PropTypes.func.isRequired,
   routes: PropTypes.array,
   isFetching: PropTypes.bool
 }

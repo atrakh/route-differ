@@ -45,6 +45,20 @@ ul.pt-menu.activity-list.show {
   overflow: auto;
 }
 
+.pt-menu-item.pt-popover-dismiss {
+  outline-style: hidden;
+  outline-color: #A66321;
+}
+
+.pt-menu-item.pt-popover-dismiss:hover {
+  background-color: rgba(217, 130, 43, 0.75);
+}
+
+.pt-menu-item.pt-popover-dismiss.selected {
+  outline-color: #A66321;
+  background-color: rgba(217, 130, 43, 0.75);
+}
+
 .pt-large {
   height: 100px;
   width: 100px;
