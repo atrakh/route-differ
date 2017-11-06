@@ -5,8 +5,11 @@ import { connect } from 'react-redux'
 import App from '../components/App'
 import { getStravaToken, login } from '../utils/auth'
 
-const onRestartClick = e => {
-  e.target.classList.remove('show')
+const onRestartClick = () => {
+  document
+  .getElementsByClassName('pt-icon-repeat')
+  .item(0)
+  .classList.remove('show')
   document
     .getElementsByClassName('route-list')
     .item(0)
