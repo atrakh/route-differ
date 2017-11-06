@@ -4,10 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --progress --hot",
-    "prettier:write":
-      "prettier --write --single-quote --no-semi \"**/*.@(js)\"",
-    "prettier:check":
-      "prettier --list-different --single-quote --no-semi \"**/*.@(js)\"",
+    "prettier:write": "prettier --write --single-quote --no-semi \"**/*.@(js)\"",
+    "prettier:check": "prettier --list-different --single-quote --no-semi \"**/*.@(js)\"",
     "test": "npm run prettier:check"
   },
   "license": "MIT",

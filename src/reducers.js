@@ -1,4 +1,4 @@
-export function routeReducer(state = {}, action) {
+export function reducer(state = {}, action) {
   switch (action.type) {
     case 'FETCH_ROUTES_REQUEST':
       return Object.assign({}, state, {
@@ -9,13 +9,10 @@ export function routeReducer(state = {}, action) {
         isFetchingRoutes: false,
         routes: action.routes
       })
-    default:
-      return state
-  }
-}
-
-export function activityReducer(state = {}, action) {
-  switch (action.type) {
+    case 'UPDATE_SELECTED_ROUTE':
+      return Object.assign({}, state, {
+        selectedRoute: state.routes[action.routeIndex]
+      })
     case 'FETCH_ACTIVITIES_REQUEST':
       return Object.assign({}, state, {
         isFetchingActivities: true
@@ -24,6 +21,10 @@ export function activityReducer(state = {}, action) {
       return Object.assign({}, state, {
         isFetchingActivities: false,
         activities: action.activities
+      })
+    case 'UPDATE_SELECTED_ACTIVITY':
+      return Object.assign({}, state, {
+        selectedActivity: state.activities[action.activityIndex]
       })
     default:
       return state

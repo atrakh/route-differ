@@ -1,14 +1,6 @@
-export function fetchRoutesRequest() {
-  return { type: 'FETCH_ROUTES_REQUEST' }
-}
-
-export function fetchRoutesSuccess(routes) {
-  return { type: 'FETCH_ROUTES_SUCCESS', routes }
-}
-
 export function fetchRoutes(stravaToken) {
   return function(dispatch) {
-    dispatch(fetchRoutesRequest())
+    dispatch({ type: 'FETCH_ROUTES_REQUEST' })
     const stravaUser = stravaToken.split(' ')
     const req = new Request(
       'https://www.strava.com/api/v3/athletes/' + stravaUser[0] + '/routes',
@@ -23,22 +15,14 @@ export function fetchRoutes(stravaToken) {
         return res.json()
       })
       .then(function(routes) {
-        dispatch(fetchRoutesSuccess(routes))
+        dispatch({ type: 'FETCH_ROUTES_SUCCESS', routes })
       })
   }
 }
 
-export function fetchActivitiesRequest() {
-  return { type: 'FETCH_ACTIVITIES_REQUEST' }
-}
-
-export function fetchActivitiesSuccess(activities) {
-  return { type: 'FETCH_ACTIVITIES_SUCCESS', activities }
-}
-
 export function fetchActivities(stravaToken) {
   return function(dispatch) {
-    dispatch(fetchActivitiesRequest())
+    dispatch({ type: 'FETCH_ACTIVITIES_REQUEST' })
     const stravaUser = stravaToken.split(' ')
     const req = new Request(
       'https://www.strava.com/api/v3/athlete/activities',
@@ -53,7 +37,19 @@ export function fetchActivities(stravaToken) {
         return res.json()
       })
       .then(function(activities) {
-        dispatch(fetchActivitiesSuccess(activities))
+        dispatch({ type: 'FETCH_ACTIVITIES_SUCCESS', activities })
       })
+  }
+}
+
+export function updateSelectedRoute(routeIndex) {
+  return function(dispatch) {
+    dispatch({ type: 'UPDATE_SELECTED_ROUTE', routeIndex })
+  }
+}
+
+export function updateSelectedActivity(activityIndex) {
+  return function(dispatch) {
+    dispatch({ type: 'UPDATE_SELECTED_ACTIVITY', activityIndex })
   }
 }

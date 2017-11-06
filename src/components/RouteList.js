@@ -11,12 +11,18 @@ import {
 
 class RouteList extends React.Component {
   componentWillMount() {
-    const { stravaToken } = this.props
-    this.props.onFetchRoutes(stravaToken)
+    const { stravaToken, onFetchRoutes } = this.props
+    onFetchRoutes(stravaToken)
   }
 
   render() {
-    const { onRouteClick, isFetching, routes, error } = this.props
+    const {
+      onRouteClick,
+      onUpdateSelectedRoute,
+      isFetching,
+      routes,
+      error
+    } = this.props
     if (isFetching) {
       return <NonIdealState visual={<Spinner />} title={'Loading'} />
     }
@@ -24,6 +30,7 @@ class RouteList extends React.Component {
     if (error) {
       return <NonIdealState visual={'error'} title={'Error loading routes'} />
     }
+
     return (
       <Menu className="route-list">
         <MenuDivider title={'Select a route'} />
@@ -33,7 +40,9 @@ class RouteList extends React.Component {
               <MenuItem
                 key={route.id}
                 text={route.name}
-                onClick={onRouteClick}
+                onClick={e => {
+                  onRouteClick(e, onUpdateSelectedRoute)
+                }}
               />
             )
           })}
@@ -45,6 +54,7 @@ class RouteList extends React.Component {
 RouteList.propTypes = {
   stravaToken: PropTypes.string,
   onRouteClick: PropTypes.func.isRequired,
+  onUpdateSelectedRoute: PropTypes.func.isRequired,
   routes: PropTypes.array,
   isFetching: PropTypes.bool
 }

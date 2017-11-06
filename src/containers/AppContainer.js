@@ -7,9 +7,9 @@ import { getStravaToken, login } from '../utils/auth'
 
 const onRestartClick = () => {
   document
-  .getElementsByClassName('pt-icon-repeat')
-  .item(0)
-  .classList.remove('show')
+    .getElementsByClassName('pt-icon-repeat')
+    .item(0)
+    .classList.remove('show')
   document
     .getElementsByClassName('route-list')
     .item(0)

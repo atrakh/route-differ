@@ -4,9 +4,26 @@ import { connect } from 'react-redux'
 
 import ActivityList from '../components/ActivityList'
 import { getStravaToken } from '../utils/auth'
-import { fetchActivities } from '../actions'
+import { fetchActivities, updateSelectedActivity } from '../actions'
 
-const onActivityClick = e => {
+const onActivityClick = (e, onUpdateSelectedActivity) => {
+  const activityList = document.getElementsByClassName('activity-list').item(0)
+  const listElements = activityList.getElementsByTagName('li')
+  for (var i = 0; i < listElements.length; i++) {
+    if (
+      listElements[i+1].getElementsByClassName('pt-menu-item').item(0) ===
+      e.target
+    ) {
+      break
+    }
+  }
+  if (
+    listElements[i+1].getElementsByClassName('pt-menu-item').item(0) !== e.target
+  ) {
+    alert('Error selecting activity!')
+  } else {
+    onUpdateSelectedActivity(i)
+  }
   const classes = e.target.classList
   if (!classes.contains('selected')) {
     let oldActivity = document
@@ -26,14 +43,15 @@ const onActivityClick = e => {
 const mapStateToProps = state => {
   return {
     stravaToken: getStravaToken(),
-    isFetchingActivities: state.activityReducer.isFetchingActivities,
-    activities: state.activityReducer.activities,
+    isFetchingActivities: state.isFetchingActivities,
+    activities: state.activities,
     onActivityClick: onActivityClick
   }
 }
 
 const mapDispatchToProps = {
-  onFetchActivities: fetchActivities
+  onFetchActivities: fetchActivities,
+  onUpdateSelectedActivity: updateSelectedActivity
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ActivityList)
