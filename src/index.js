@@ -10,11 +10,7 @@ import 'normalize.css'
 import '@blueprintjs/core/dist/blueprint.css'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-const store = createStore(
-  reducer,
-  {},
-  composeEnhancers(applyMiddleware(thunk))
-)
+const store = createStore(reducer, {}, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <Provider store={store}>

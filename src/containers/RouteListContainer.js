@@ -11,14 +11,15 @@ const onRouteClick = (e, onUpdateSelectedRoute) => {
   const listElements = routeList.getElementsByTagName('li')
   for (var i = 0; i < listElements.length; i++) {
     if (
-      listElements[i+1].getElementsByClassName('pt-menu-item').item(0) ===
+      listElements[i + 1].getElementsByClassName('pt-menu-item').item(0) ===
       e.target
     ) {
       break
     }
   }
   if (
-    listElements[i+1].getElementsByClassName('pt-menu-item').item(0) !== e.target
+    listElements[i + 1].getElementsByClassName('pt-menu-item').item(0) !==
+    e.target
   ) {
     alert('Error selecting route!')
   } else {
