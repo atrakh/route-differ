@@ -42,7 +42,8 @@ const mapStateToProps = state => {
     stravaToken: getStravaToken(),
     onRouteClick: onRouteClick,
     isFetching: state.isFetchingRoutes,
-    routes: state.routes
+    routes: state.routes,
+    showAlert: false
   }
 }
 

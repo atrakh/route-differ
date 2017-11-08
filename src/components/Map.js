@@ -1,8 +1,7 @@
 import React from 'react'
 import GoogleMapReact from 'google-map-react'
 import PropTypes from 'prop-types'
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>
+import { Alert } from '@blueprintjs/core'
 
 class Map extends React.Component {
   // todo: DRY this up
@@ -25,26 +24,41 @@ class Map extends React.Component {
         path: nextProps.activity,
         geodesic: true,
         strokeColor: 'blue',
-        strokeOpacity: 1.0,
+        strokeOpacity: 0.75,
         strokeWeight: 2
       })
       this.activity.setMap(this.google.map_)
     }
   }
   render() {
-    const { route, activity } = this.props
+    const { route, activity, isBrokenItemSelected } = this.props
     return (
-      <div className="map">
-        <GoogleMapReact
-          ref={google => {
-            if (google) {
-              this.google = google
-            }
+      <div>
+        <Alert
+          isOpen={isBrokenItemSelected}
+          // TODO: use props instead of refreshing
+          onConfirm={() => {
+            window.location = window.location.origin
           }}
-          apiKey={'AIzaSyACLcGZ7uCvTDMGk0UhD0e2qmzKmaWcYt0'} // this is safe
-          zoom={11}
-          center={route[0] || { lat: 37.773972, lng: -122.431297 }}
-        />
+        >
+          {
+            "The item you've selected is broken, please select another item. This is an artifact of Strava API behavior."
+          }
+        </Alert>
+        <div className="map">
+          <GoogleMapReact
+            ref={google => {
+              if (google) {
+                this.google = google
+              }
+            }}
+            bootstrapURLKeys={{
+              key: 'AIzaSyACLcGZ7uCvTDMGk0UhD0e2qmzKmaWcYt0'
+            }} // this is safe
+            zoom={11}
+            center={route[0] || { lat: 37.773972, lng: -122.431297 }}
+          />
+        </div>
       </div>
     )
   }

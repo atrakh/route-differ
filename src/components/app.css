@@ -38,6 +38,7 @@ ul.pt-menu.activity-list {
   opacity: 0;
   transition: all 1s;
   overflow: hidden;
+  max-height: inherit;
 }
 
 ul.pt-menu.activity-list.show {
@@ -48,7 +49,7 @@ ul.pt-menu.activity-list.show {
 
 .pt-menu-item.pt-popover-dismiss {
   outline-style: hidden;
-  outline-color: #A66321;
+  outline-color: #a66321;
 }
 
 .pt-menu-item.pt-popover-dismiss:hover {
@@ -56,7 +57,7 @@ ul.pt-menu.activity-list.show {
 }
 
 .pt-menu-item.pt-popover-dismiss.selected {
-  outline-color: #A66321;
+  outline-color: #a66321;
   background-color: rgba(217, 130, 43, 0.75);
 }
 
@@ -87,4 +88,40 @@ div.map {
 
 div.map > div {
   position: absolute !important;
+}
+
+@keyframes reset {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+div.pt-card {
+  animation-name: reset, fade-in;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+}
+
+div.pt-card.pt-elevation-1 {
+  animation-duration: 1.5s;
+}
+
+div.pt-card.pt-elevation-2 {
+  animation-duration: 2.25s;
 }

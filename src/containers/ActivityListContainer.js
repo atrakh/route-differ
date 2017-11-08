@@ -6,7 +6,7 @@ import ActivityList from '../components/ActivityList'
 import { getStravaToken } from '../utils/auth'
 import { fetchActivities, updateSelectedActivity } from '../actions'
 
-const onActivityClick = (e, onUpdateSelectedActivity) => {
+const activityClick = (e, onUpdateSelectedActivity) => {
   const activityList = document.getElementsByClassName('activity-list').item(0)
   const listElements = activityList.getElementsByTagName('li')
   for (var i = 0; i < listElements.length; i++) {
@@ -46,7 +46,7 @@ const mapStateToProps = state => {
     stravaToken: getStravaToken(),
     isFetchingActivities: state.isFetchingActivities,
     activities: state.activities,
-    onActivityClick: onActivityClick
+    onActivityClick: activityClick
   }
 }
 

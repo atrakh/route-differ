@@ -12,9 +12,12 @@ const decodePolyline = (pl) => {
   })
 }
 function mapStateToProps(state) {
+  let isBrokenRouteSelected = (state.selectedRoute && state.selectedRoute.map && !state.selectedRoute.map.summary_polyline);
+  let isBrokenActivitySelected = (state.selectedActivity && state.selectedActivity.map && !state.selectedActivity.map.summary_polyline);
   return {
-    route: state.selectedRoute ? decodePolyline(state.selectedRoute) : [],
-    activity: state.selectedActivity ? decodePolyline(state.selectedActivity) : []
+    route: state.selectedRoute && state.selectedRoute.map && state.selectedRoute.map.summary_polyline ? decodePolyline(state.selectedRoute) : [],
+    activity: state.selectedActivity && state.selectedActivity.map && state.selectedActivity.map.summary_polyline ? decodePolyline(state.selectedActivity) : [],
+    isBrokenItemSelected: isBrokenRouteSelected || isBrokenActivitySelected
   }
 }
 

@@ -9,15 +9,17 @@ import ActivityList from '../containers/ActivityListContainer'
 import Navbar from '../containers/NavbarContainer'
 import Map from '../containers/MapContainer'
 import StartOver from '../containers/StartOverContainer'
+import Stats from '../containers/StatsContainer'
 
 const App = ({ stravaToken, onLoginClick }) => {
   return (
     <div>
       <Navbar />
       {stravaToken ? (
-        <Flex>
+        <Flex className="flex">
           <Box width={1}>
             <Map />
+            <Stats />
           </Box>
           <Box>
             <StartOver />

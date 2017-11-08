@@ -17,6 +17,14 @@ const restartClick = (onUpdateSelectedRoute, onUpdateSelectedActivity) => {
     .getElementsByClassName('activity-list')
     .item(0)
     .classList.remove('show')
+  let activity = document
+    .getElementsByClassName('activity-list')
+    .item(0)
+    .getElementsByClassName('selected')
+    .item(0)
+  if (activity) {
+    activity.classList.remove('selected')
+  }
   onUpdateSelectedRoute(-1)
   onUpdateSelectedActivity(-1)
 }
