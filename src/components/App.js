@@ -7,7 +7,7 @@ import { Button, Icon, NonIdealState } from '@blueprintjs/core'
 import RouteList from '../containers/RouteListContainer'
 import ActivityList from '../containers/ActivityListContainer'
 import Navbar from '../containers/NavbarContainer'
-import Map from './Map'
+import Map from '../containers/MapContainer'
 
 const App = ({ stravaToken, onLoginClick, onRestartClick }) => {
   return (
