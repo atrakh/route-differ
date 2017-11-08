@@ -8,8 +8,9 @@ import RouteList from '../containers/RouteListContainer'
 import ActivityList from '../containers/ActivityListContainer'
 import Navbar from '../containers/NavbarContainer'
 import Map from '../containers/MapContainer'
+import StartOver from '../containers/StartOverContainer'
 
-const App = ({ stravaToken, onLoginClick, onRestartClick }) => {
+const App = ({ stravaToken, onLoginClick }) => {
   return (
     <div>
       <Navbar />
@@ -19,11 +20,7 @@ const App = ({ stravaToken, onLoginClick, onRestartClick }) => {
             <Map />
           </Box>
           <Box>
-            <Button
-              className="pt-minimal pt-intent-warning pt-icon-repeat"
-              text="Start over"
-              onClick={onRestartClick}
-            />
+            <StartOver />
             <RouteList />
             <ActivityList />
           </Box>
@@ -47,8 +44,7 @@ const App = ({ stravaToken, onLoginClick, onRestartClick }) => {
 
 App.propTypes = {
   stravaToken: PropTypes.string,
-  onLoginClick: PropTypes.func.isRequired,
-  onRestartClick: PropTypes.func.isRequired
+  onLoginClick: PropTypes.func.isRequired
 }
 
 export default App
