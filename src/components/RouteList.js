@@ -6,7 +6,8 @@ import {
   Spinner,
   Menu,
   MenuItem,
-  MenuDivider
+  MenuDivider,
+  Alert
 } from '@blueprintjs/core'
 
 class RouteList extends React.Component {
@@ -21,7 +22,8 @@ class RouteList extends React.Component {
       onUpdateSelectedRoute,
       isFetching,
       routes,
-      error
+      error,
+      showAlert
     } = this.props
     if (isFetching) {
       return <NonIdealState visual={<Spinner />} title={'Loading'} />
@@ -29,6 +31,24 @@ class RouteList extends React.Component {
 
     if (error) {
       return <NonIdealState visual={'error'} title={'Error loading routes'} />
+    }
+    if (routes === []) {
+      return (
+        <Alert
+          isOpen={true}
+          confirmButtonText={'Take me to Strava'}
+          onConfirm={() => {
+            // TODO: propify
+            window.open('https://www.strava.com/routes/new','_blank')
+          }}
+          /* cancelButtonText={'Close'}
+          onCancel={TODO}} */
+        >
+          {
+            "You don't have any routes! Create a route on Strava and refresh this page."
+          }
+        </Alert>
+      )
     }
 
     return (
@@ -56,6 +76,7 @@ RouteList.propTypes = {
   onRouteClick: PropTypes.func.isRequired,
   onUpdateSelectedRoute: PropTypes.func.isRequired,
   routes: PropTypes.array,
-  isFetching: PropTypes.bool
+  isFetching: PropTypes.bool,
+  showAlert: PropTypes.bool
 }
 export default RouteList

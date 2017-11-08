@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Button } from '@blueprintjs/core'
-import RouteList from './RouteList'
 
 const StartOver = ({
   onRestartClick,
