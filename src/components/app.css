@@ -80,14 +80,11 @@ button.pt-button.pt-minimal.pt-intent-warning.pt-icon-repeat.show {
 }
 
 div.map {
-  padding-top: 61.8%;
+  width: 100%;
+  padding-bottom: 61.8%;
   position: relative;
-  height: 0;
 }
 
-div.map.container {
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+div.map > div {
+  position: absolute !important;
 }
