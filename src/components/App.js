@@ -18,6 +18,7 @@ const App = ({ stravaToken, onLoginClick }) => {
       navigator.userAgent
     )
   ) {
+    require('./mobile.css')
     return <MobileApp stravaToken={stravaToken} onLoginClick={onLoginClick}/>
   } else {
     return (

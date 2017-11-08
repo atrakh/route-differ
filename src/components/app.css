@@ -14,7 +14,6 @@ ul.pt-menu {
 }
 
 .pt-menu {
-  height: 100%;
   max-width: 300px;
 }
 
@@ -42,7 +41,6 @@ ul.pt-menu.activity-list {
 }
 
 ul.pt-menu.activity-list.show {
-  height: 100%;
   opacity: 1;
   overflow: hidden;
 }

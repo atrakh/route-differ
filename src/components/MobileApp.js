@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Flex, Box } from 'grid-styled'
-import './mobile.css'
 
+import { Flex, Box } from 'grid-styled'
 import { Button, Icon, NonIdealState } from '@blueprintjs/core'
 import RouteList from '../containers/RouteListContainer'
 import ActivityList from '../containers/ActivityListContainer'
@@ -17,11 +16,11 @@ const App = ({ stravaToken, onLoginClick }) => {
       <Navbar />
       {stravaToken ? (
         <div>
-            <Map />
-            <Stats />
-            <StartOver />
-            <RouteList />
-            <ActivityList />
+          <Map />
+          <Stats />
+          <StartOver />
+          <RouteList />
+          <ActivityList />
         </div>
       ) : (
         <NonIdealState
