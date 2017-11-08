@@ -39,7 +39,7 @@ class RouteList extends React.Component {
           confirmButtonText={'Take me to Strava'}
           onConfirm={() => {
             // TODO: propify
-            window.open('https://www.strava.com/routes/new','_blank')
+            window.open('https://www.strava.com/routes/new', '_blank')
           }}
           /* cancelButtonText={'Close'}
           onCancel={TODO}} */

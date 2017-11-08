@@ -11,7 +11,8 @@ export function reducer(state = {}, action) {
       })
     case 'UPDATE_SELECTED_ROUTE':
       return Object.assign({}, state, {
-        selectedRoute: action.routeIndex != -1 ? state.routes[action.routeIndex] : null
+        selectedRoute:
+          action.routeIndex != -1 ? state.routes[action.routeIndex] : null
       })
     case 'FETCH_ACTIVITIES_REQUEST':
       return Object.assign({}, state, {
@@ -24,7 +25,10 @@ export function reducer(state = {}, action) {
       })
     case 'UPDATE_SELECTED_ACTIVITY':
       return Object.assign({}, state, {
-        selectedActivity: action.activityIndex != -1 ? state.activities[action.activityIndex] : null
+        selectedActivity:
+          action.activityIndex != -1
+            ? state.activities[action.activityIndex]
+            : null
       })
     default:
       return state
