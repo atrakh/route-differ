@@ -1,0 +1,9 @@
+ul.pt-menu {
+    max-width: 100%;
+}
+
+.pt-menu-item {
+    font-size: 250%;
+    height: 60px;
+    padding: 25px;
+}

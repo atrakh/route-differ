@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --progress --hot",
+    "start": "webpack",
+    "start:dev": "webpack-dev-server --open --progress --hot",
     "prettier:write": "prettier --write --single-quote --no-semi \"**/*.@(js)\"",
     "prettier:check": "prettier --list-different --single-quote --no-semi \"**/*.@(js)\"",
     "test": "npm run prettier:check"
