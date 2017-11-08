@@ -5,7 +5,7 @@ body {
 }
 
 nav.pt-navbar {
-  background: #f1f4f7;
+  background: #eaeff3;
 }
 
 ul.pt-menu {
@@ -24,6 +24,7 @@ ul.pt-menu {
 
 ul.pt-menu.route-list {
   transition: all 1s;
+  overflow: hidden;
 }
 
 ul.pt-menu.route-list.hide {
@@ -42,7 +43,7 @@ ul.pt-menu.activity-list {
 ul.pt-menu.activity-list.show {
   height: 100%;
   opacity: 1;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .pt-menu-item.pt-popover-dismiss {
@@ -79,21 +80,14 @@ button.pt-button.pt-minimal.pt-intent-warning.pt-icon-repeat.show {
 }
 
 div.map {
-  min-width: 300px;
-  min-height: 200px;
-  width: 100%;
-  height: 0;
-  margin: 0 auto;
-  padding-top: 50%;
+  padding-top: 61.8%;
   position: relative;
+  height: 0;
 }
 
 div.map.container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
   top: 0;
-  right: 0;
   left: 0;
   bottom: 0;
+  right: 0;
 }
