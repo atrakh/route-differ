@@ -1,0 +1,16 @@
+.pt-menu {
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  ul.pt-menu {
+    max-width: 100%;
+    width: 100%;
+    text-align: left;
+    font-size: 150%
+  }
+
+  .pt-menu-item {
+    transform: scaleY(1.2)
+  }
