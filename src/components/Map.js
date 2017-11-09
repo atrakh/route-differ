@@ -42,7 +42,7 @@ class Map extends React.Component {
           }}
         >
           {
-            "The item you've selected is broken, please select another item. This is an artifact of Strava API behavior."
+            "This route doesn't have a polyline. Was this a stationary trainer ride?"
           }
         </Alert>
         <div className="map">
@@ -55,7 +55,7 @@ class Map extends React.Component {
             bootstrapURLKeys={{
               key: 'AIzaSyACLcGZ7uCvTDMGk0UhD0e2qmzKmaWcYt0'
             }} // this is safe
-            zoom={11}
+            zoom={8}
             center={route[0] || { lat: 37.773972, lng: -122.431297 }}
           />
         </div>
