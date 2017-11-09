@@ -25,5 +25,8 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist')
+  },
+  resolve: {
+    modules: [path.join(__dirname, 'src'), 'node_modules']
   }
 }

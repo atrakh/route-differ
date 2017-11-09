@@ -2,10 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Stats = ({ route, activity }) => {
-  console.log(route, activity)
-  console.log
   // TODO: move logic to container
-
   if (route && activity) {
     var prefixBlurb = 'Your ' + activity.type.toLowerCase()
     var distanceBlurb =
